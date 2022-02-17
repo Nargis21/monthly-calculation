@@ -1,14 +1,10 @@
 // get the value of income,rent,food,clothes and calculate it
 
 document.getElementById('calculate-btn').addEventListener('click', function () {
-    const incomeField = document.getElementById('income-total');
-    const incomeTotal = parseFloat(incomeField.value);
-    const foodField = document.getElementById('food-expense');
-    const foodExpense = parseFloat(foodField.value);
-    const rentField = document.getElementById('rent-expense');
-    const rentExpense = parseFloat(rentField.value);
-    const clothesField = document.getElementById('clothes-expense');
-    const clothesExpense = parseFloat(clothesField.value);
+    const incomeTotal = getValue('income-total');
+    const foodExpense = getValue('food-expense')
+    const rentExpense = getValue('rent-expense')
+    const clothesExpense = getValue('clothes-expense')
 
     // Error handling for negative value
     if (incomeTotal < 0 || rentExpense < 0 || foodExpense < 0 || clothesExpense < 0) {
@@ -45,13 +41,11 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
 // Calculate save amount with parcentage 
 
 document.getElementById('save-btn').addEventListener('click', function () {
-    const saveField = document.getElementById('save-parcent');
-    const saveValue = parseFloat(saveField.value);
+    const saveValue = getValue('save-parcent');
+    const incomeTotal = getValue('income-total')
+    const savingAmount = (incomeTotal * saveValue) / 100;
     const balance = document.getElementById('balance');
     const balanceTotal = parseFloat(balance.innerText);
-    const incomeField = document.getElementById('income-total');
-    const incomeTotal = parseFloat(incomeField.value);
-    const savingAmount = (incomeTotal * saveValue) / 100;
 
     // error handing for lowest balance
     if (savingAmount > balanceTotal) {
@@ -72,7 +66,15 @@ document.getElementById('save-btn').addEventListener('click', function () {
     //call clean input fields function
     clearInputFields();
 })
-//function of Get a element by id
+// Clean the all balance innertext when click on the income input
+document.getElementById('income-total').addEventListener('click', function () {
+    document.getElementById('total-expense').innerText = '00';
+    document.getElementById('balance').innerText = '00';
+    document.getElementById('saving-amount').innerText = '00';
+    document.getElementById('remaining-balance').innerText = '00';
+
+})
+//function of Get the value of a element by id
 function getValue(idName) {
     const element = document.getElementById(idName);
     const elementValue = parseFloat(element.value);
