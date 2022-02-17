@@ -13,15 +13,19 @@
 </head>
 
 <body>
+    <!-- exploring header -->
     <header>
         <h1 class="my-5 text-center text-primary fw-bold">Monthly Calculation</h1>
     </header>
+    <!-- main section -->
     <main>
         <section class="container">
             <div class="row gy-5">
+                <!-- image section -->
                 <div class="col-lg-7 col-sm-12 pe-lg-5">
                     <img src="images/budget.jpg " class="w-100" alt="">
                 </div>
+                <!-- Calculation section -->
                 <div class="col-lg-5 col-sm-12 p-4 bg-secondary bg-opacity-25">
                     <h3 class="text-center py-3">Income</h3>
                     <div class="text-center row d-flex justify-content-center align-items-center my-3">
@@ -29,7 +33,8 @@
                             <h5>Income: </h5>
                         </div>
                         <div class="col-8 text-start">
-                            <input class=" rounded-2 border-0 bg-secondary bg-opacity-50 p-2" type="text">
+                            <input id="income-total" class=" rounded-2 border-0 bg-secondary bg-opacity-50 p-2"
+                                type="number">
                         </div>
                     </div>
                     <h4 class="text-center py-3">Expenses</h4>
@@ -38,7 +43,8 @@
                             <h5>Food: </h5>
                         </div>
                         <div class="col-8 text-start">
-                            <input class=" rounded-2 border-0 bg-secondary bg-opacity-50 p-2" type="text">
+                            <input id="food-expense" class=" rounded-2 border-0 bg-secondary bg-opacity-50 p-2"
+                                type="number">
                         </div>
                     </div>
                     <div class="text-center row d-flex justify-content-center align-items-center my-3"><br>
@@ -46,7 +52,8 @@
                             <h5>Rent: </h5>
                         </div>
                         <div class="col-8 text-start">
-                            <input class="rounded-2 border-0 bg-secondary bg-opacity-50 p-2" type="text">
+                            <input id="rent-expense" class="rounded-2 border-0 bg-secondary bg-opacity-50 p-2"
+                                type="number">
                         </div>
                     </div>
                     <div class="text-center row d-flex justify-content-center align-items-center my-3"><br>
@@ -54,15 +61,16 @@
                             <h5>Clothes: </h5>
                         </div>
                         <div class="col-8 text-start">
-                            <input class=" rounded-2 border-0 bg-secondary bg-opacity-50 p-2" type="text">
+                            <input id="clothes-expense" class=" rounded-2 border-0 bg-secondary bg-opacity-50 p-2"
+                                type="number">
                         </div>
                     </div>
                     <div class="text-center my-4">
-                        <button
-                            class="text-white fw-bold border-0 rounded-3 px-5 py-3 bg-primary bg-opacity-75">Calculation</button>
+                        <button type="button" id="calculate-btn"
+                            class="text-white fw-bold border-0 rounded-3 px-5 py-3 bg-primary bg-opacity-75">Calculate</button>
                     </div>
-                    <h3 class="text-center py-3">Total Expenses : <span>0000</span></h3>
-                    <h3 class="text-center py-3">Balance: <span>0000</span></h3>
+                    <h3 class="text-center py-3">Total Expenses : <span id="total-expense">0000</span></h3>
+                    <h3 class="text-center py-3">Balance: <span id="balance">0000</span></h3>
                     <div class="row d-flex justify-content-center align-items-center px-5">
                         <div class="col-6">
                             <div class="text-center row d-flex justify-content-center align-items-center my-3"><br>
@@ -70,7 +78,8 @@
                                     <h5>Save: </h5>
                                 </div>
                                 <div class="col-8 text-start">
-                                    <input class="w-75 border-0 bg-secondary bg-opacity-50 p-2 rounded-2" type="text">
+                                    <input id="save-parcent"
+                                        class="w-75 border-0 bg-secondary bg-opacity-50 p-2 rounded-2" type="number">
                                 </div>
                             </div>
                         </div>
@@ -80,7 +89,7 @@
                                     <h5> % </h5>
                                 </div>
                                 <div class="col-8 text-start">
-                                    <button
+                                    <button id="save-btn"
                                         class="text-white fw-bold border-0 rounded-3 px-5 py-2 bg-primary bg-opacity-75">Save</button>
                                 </div>
 
@@ -90,22 +99,19 @@
                         </div>
 
                     </div>
-                    <h3 class="text-center py-3">Saving Amount : <span>0000</span></h3>
-                    <h3 class="text-center py-3">Remaining Balance: <span>0000</span></h3>
+                    <h3 class="text-center py-3">Saving Amount : <span id="saving-amount">0000</span></h3>
+                    <h3 class="text-center py-3">Remaining Balance: <span id="remaining-balance">0000</span></h3>
 
                 </div>
 
         </section>
     </main>
 
-
-
-
-
     <!-- Bootstrap js bundle link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+    <!-- External javascript link -->
     <script src="script.js"></script>
 </body>
 
