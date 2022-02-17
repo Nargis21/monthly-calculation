@@ -17,6 +17,18 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
         const errorMessage = document.getElementById('input-error');
         errorMessage.classList.add('d-none');
     }
+    // Error handling for string value
+    if (isNaN(incomeTotal) || isNaN(rentExpense) || isNaN(foodExpense) || isNaN(clothesExpense)) {
+        const errorMessage = document.getElementById('type-error');
+        errorMessage.classList.remove('d-none');
+        clearInputFields();
+        return
+    }
+    else {
+        const errorMessage = document.getElementById('type-error');
+        errorMessage.classList.add('d-none');
+    }
+
     const totalExpenses = foodExpense + rentExpense + clothesExpense;
 
     // Error handling for over expense
@@ -42,6 +54,10 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
 
 document.getElementById('save-btn').addEventListener('click', function () {
     const saveValue = getValue('save-parcent');
+    if (saveValue < 0 || isNaN(saveValue)) {
+        clearInputFields();
+        return
+    }
     const incomeTotal = getValue('income-total')
     const savingAmount = (incomeTotal * saveValue) / 100;
     const balance = document.getElementById('balance');
